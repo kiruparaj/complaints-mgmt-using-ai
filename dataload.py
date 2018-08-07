@@ -1,11 +1,9 @@
-import tensorflow as tf
 import pandas as pd
 import numpy as np
-import logging
 
 from sklearn.model_selection import train_test_split
 import re
-def load_imdb_sentiment_analysis_dataset( seed=123):
+def load_data_from_csv( seed=123):
     train_file = './data/consumer_complaints.csv.zip'
     df = pd.read_csv(train_file, compression='zip', dtype={'consumer_complaint_narrative': object})
     selected = ['product', 'consumer_complaint_narrative']
@@ -72,4 +70,4 @@ def clean_str(s):
     return s.strip().lower()
 
 if __name__== "__main__":
-    load_imdb_sentiment_analysis_dataset()
+    load_data_from_csv()
